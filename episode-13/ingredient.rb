@@ -12,7 +12,7 @@ class Ingredient
   end
 
   def initialize(name)
-    @name = 'cherry'
+    @name = name
   end
 
   def name
