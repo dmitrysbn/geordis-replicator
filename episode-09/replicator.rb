@@ -1,3 +1,5 @@
+require 'pry'
+
 class Replicator
 
   # When the Enterprise calls Replicator.new, this method executes.
@@ -40,7 +42,6 @@ class Replicator
   # and then manually execute each method to ensure
   # it returns what's expect.
   def replicate(recipe)
-
     # Setup an instance variable for the recipe
     # so that other methods can see what the recipe is
     @recipe = recipe
@@ -68,7 +69,7 @@ class Replicator
 
     # This methods mixes the ingredients in the glass around.
     # It returns nil, even if successful, but if you look at:
-    #   glass_inside_replicator.inside.contents
+      glass_inside_replicator.inside.contents
     # then you may find the ingredients order has changed.
     # If it's successful, all the ingredients should still be in the glass.
     mix
@@ -96,6 +97,7 @@ class Replicator
   end
 
   def glass_inside_replicator
+
     # This reaches into the @inside_replicator location instance
     # and then into the `contents` of that instance, which is an array
     # and obtains the first element of that array.
@@ -104,6 +106,7 @@ class Replicator
 
   # This transports ingredients into the glass.
   def transport_ingredients_to_glass
+
 
     # Abort if there is no glass inside the replicator.
     return unless glass_inside_replicator
@@ -169,11 +172,12 @@ class Replicator
     # Transport glass from reactor back to inside the replicator.
     # If successful, @enterprise.reactor.core will now be empty
     # and @inside_replicator will once again contain the glass.
-    # transport_glass_from_reactor
+    transport_glass_from_reactor
 
   end
 
   def transport_glass_to_reactor
+
     @enterprise.transporter.energize(
       glass_inside_replicator,
       @inside_replicator,
@@ -182,6 +186,7 @@ class Replicator
   end
 
   def transport_glass_from_reactor
+
     @enterprise.transporter.energize(
       @glass,
       @enterprise.reactor.core,
@@ -190,6 +195,7 @@ class Replicator
   end
 
   def transport_glass_to_replicator_plate
+
     @enterprise.transporter.energize(
       glass_inside_replicator,
       @inside_replicator,

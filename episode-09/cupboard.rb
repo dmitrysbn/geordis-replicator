@@ -14,7 +14,7 @@ class Cupboard
   end
 
   def stock_shelf
-    5.times do
+    100.times do
       @shelf.contents << Glass.new
     end
   end
