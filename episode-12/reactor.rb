@@ -31,7 +31,7 @@ class Reactor
   end
 
   def stock
-    @dilithium_crystals += 100
+    @dilithium_crystals += 1000
   end
 
   def draw_power(amount = 1)
