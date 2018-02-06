@@ -1,3 +1,5 @@
+require 'pry'
+
 class Replicator
 
   # When the Enterprise calls Replicator.new, this method executes.
@@ -26,6 +28,7 @@ class Replicator
     @plate
   end
 
+
   def connect_to_power
     # In Ruby, nil and false are "falsey" and everything else is a "truthy",
     # including the number 0, empty arrays, and anything else (strings, classes, instances, etc.).
@@ -40,7 +43,6 @@ class Replicator
   # and then manually execute each method to ensure
   # it returns what's expect.
   def replicate(recipe)
-
     # Setup an instance variable for the recipe
     # so that other methods can see what the recipe is
     @recipe = recipe
@@ -146,7 +148,7 @@ class Replicator
 
     # Setup variables for temperature adjustment loop
     desired_temperature         = @recipe.temperature
-    maximum_adjustments_allowed = 5
+    maximum_adjustments_allowed = 70
     number_of_adjustments       = 0
 
     # Keep adjusting temperature until desired temperature is reached
